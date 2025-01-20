@@ -1,0 +1,153 @@
+/* theming */
+.theme-dark:focus-within {
+    --background-modifier-selected: var(--breeze-accent); /* sel channel */
+
+    /* mine */
+    --bg-top-panel: var(--breeze-alt-panel)
+}
+.theme-dark {
+    /* mine */
+    --breeze-text: #fcfcfc;
+    --breeze-inactive-text: #a1a9b1;
+    --breeze-accent: #e93d58;
+    --breeze-dim-accent: #622530;
+    --breeze-view-bg: #1b1e20;
+    --breeze-alt-view-bg: #232629;
+    --breeze-panel: #2a2e32;
+    --breeze-alt-panel: #31363b;
+    --breeze-scrollbar: #424546;
+    --breeze-border: #54565A;
+
+    --bg-top-panel: var(--breeze-panel);
+    /* /mine */
+
+    --background-primary: var(--breeze-view-bg); /* text */
+    --background-secondary: var(--breeze-panel); /* channels */
+    --background-secondary-alt: var(--breeze-alt-panel); /* user box */
+    --background-tertiary: var(--breeze-panel); /* servers */
+    --bg-brand: #E83D58; /* brand colour */
+    --text-normal: var(--breeze-text);
+    --scrollbar-auto-thumb: var(--breeze-scrollbar);
+    --scrollbar-auto-track: var(--breeze-panel);
+    --scrollbar-thin-thumb: var(--breeze-scrollbar);
+    --scrollbar-thin-track: var(--breeze-panel);
+    --__spoiler-background-color--hidden: var(--breeze-alt-panel);
+    --__spoiler-background-color--hidden--hover: var(--breeze-alt-panel);
+    --__spoiler-background-color--revealed: var(--breeze-alt-panel);
+    --bg-overlay-hover: var(--breeze-dim-accent); /* hov channel */
+    --bg-overlay-active: var(--breeze-accent); /* hov channel */
+    --background-modifier-selected: var(--breeze-dim-accent); /* sel channel */
+    --background-mentioned: var(--breeze-alt-view-bg); /* ping bg */
+    --background-mentioned-hover: var(--breeze-dim-accent); /* hov ping bg */
+    --info-warning-foreground: var(--breeze-accent); /* ping left */
+    --background-message-hover: var(--breeze-alt-view-bg); /* message hover */
+    --bg-surface-overlay: var(--breeze-panel); /* profile bg */
+    --bg-surface-raised: var(--breeze-view-bg); /* status bubble bg */
+    --background-modifier-hover: var(--breeze-dim-accent); /* button hover */
+
+    --guild-header-text-shadow: none;
+    --elevation-stroke: none;
+    --elevation-low: none;
+    --elevation-medium: none;
+    --elevation-high: none;
+    --shadow-border: none;
+    --shadow-button-overlay: none;
+    --shadow-high: none;
+    --shadow-ledge: none;
+    --shadow-low: none;
+    --shadow-low-active: none;
+    --shadow-low-hover: none;
+    --shadow-medium: none;
+    --shadow-mobile-navigator-x: none;
+    --shadow-top-high: none;
+    --shadow-top-ledge: none;
+    --shadow-top-low: none;
+
+}
+
+:root {
+    --font-primary: "Noto Sans", "nasin-nanpa";
+    --font-display: "Noto Sans", sans-serif;
+    --font-headline: "Noto Sans", sans-serif;
+}
+
+[aria-label*="Channel header"],
+[aria-label*="Friends"] [role*="navigation"] {
+    --__header-bar-background: var(--bg-top-panel);
+    border-bottom: 1px solid var(--breeze-border);
+}
+[aria-label*="User area"] {
+    border-top: 1px solid var(--breeze-border);
+}
+[class*="sidebar_"] [class*="searchBar_"],
+[class*="sidebar_"] [class*="header_"] {
+    margin-top: -1px;
+    background-color: var(--bg-top-panel);
+    border-bottom: 1px solid var(--breeze-border);
+}
+[class*="sidebar_"] {
+    border-left: 1px solid var(--breeze-border);
+    border-right: 1px solid var(--breeze-border);
+}
+[class*="message_"] [class*="buttonsInner_"] {
+    background-color: var(--breeze-alt-panel);
+}
+[class*="privateChannels_"] [class*="searchBarComponent_"],
+[class*="toolbar_"] [class*="searchBar_"] {
+    background-color: var(--breeze-view-bg);
+}
+
+/* clear typing bar */
+button[aria-label*="Send a gift"],
+div[aria-label*="Play Activities here"],
+div[class*="channelAppLauncher_"]
+{
+    display:none;
+}
+
+/* autohide members list */
+@media (max-width: 1100px)
+{
+    [class*="chat_"]
+    {
+        [class*="membersWrap_"]
+        {
+            display: none;
+        }
+    }
+}
+
+
+/* hide activity members list */
+[class*='membersGroup']:has([role=button]),
+[class*='member'] [class*='container']:has([class*='badges'])
+{
+    display: none;
+}
+
+/* make chat buttons hover */
+[class^=chat_] [class^=textArea_] {
+  margin-right: 24px;
+  +[class^=buttons_] {
+    position: absolute;
+    right: 0;
+    background-color: hsl(var(--primary-560-hsl) / 0.5);
+    backdrop-filter: blur(3px);
+    border-radius: 8px;
+    &:not(:hover)>:not(:last-child) {
+      display: none;
+    }
+    /* Send message button fix */
+    &:not(:hover)>[class^=separator_] {
+      margin-left: 0;
+      &::before { display: none; }
+      button>div { margin-left: 8px; }
+    }
+  }
+}
+
+[class^="channelTextArea_"] {
+    [class^=buttons_] > [class^=separator_] {
+        display: flex;
+    }
+}
