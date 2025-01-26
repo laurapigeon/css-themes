@@ -147,7 +147,7 @@ div[class*="channelAppLauncher_"]
 }
 
 [class^="channelTextArea_"] {
-    [class^=buttons_] > [class^=separator_] {
+    [class^=container_]:has([aria-label*="Send Message"]) {
         display: flex;
     }
 }
