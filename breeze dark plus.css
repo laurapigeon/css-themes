@@ -157,3 +157,8 @@ img[class^="avatar"][src^="https://cdn.discordapp.com/avatar-decoration-presets/
 img[class^="effect"][src^="https://cdn.discordapp.com/assets/profile_effects/"] {
     display: none;
 }
+
+/* group compact messages */
+li[class*="messageListItem_"] + li[class*="messageListItem_"]:has(> [class*="groupStart_"][class*="compact_"]) {
+  padding-top: 0.25em;
+}
