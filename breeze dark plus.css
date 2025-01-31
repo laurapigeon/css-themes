@@ -162,3 +162,11 @@ img[class^="effect"][src^="https://cdn.discordapp.com/assets/profile_effects/"] 
 li[class*="messageListItem_"] + li[class*="messageListItem_"]:has(> [class*="groupStart_"][class*="compact_"]) {
   padding-top: 0.25em;
 }
+
+/* pin page switcher */
+[class^=container_]:has([class^=pageControlContainer_]){
+  position:sticky;
+  bottom:0px;
+  z-index: 999;
+  background: var(--bg-overlay-1, var(--background-secondary));;
+}
