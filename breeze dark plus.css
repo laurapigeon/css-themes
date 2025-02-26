@@ -170,3 +170,8 @@ li[class*="messageListItem_"] + li[class*="messageListItem_"]:has(> [class*="gro
   z-index: 999;
   background: var(--bg-overlay-1, var(--background-secondary));;
 }
+
+/* hide explorer */
+[class*="footer_"] {
+    display: none;
+}
