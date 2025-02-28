@@ -172,6 +172,6 @@ li[class*="messageListItem_"] + li[class*="messageListItem_"]:has(> [class*="gro
 }
 
 /* hide explorer */
-[class*="footer_"] {
+[aria-label*="Servers sidebar"] [class*="footer_"] {
     display: none;
 }
