@@ -175,3 +175,8 @@ li[class*="messageListItem_"] + li[class*="messageListItem_"]:has(> [class*="gro
 [aria-label*="Servers sidebar"] [class*="footer_"] {
     display: none;
 }
+
+/* hide now playing */
+[class*="nowPlayingColumn_"] {
+    display: none;
+}
